@@ -9,7 +9,6 @@ import io.vertx.core.json.Json
 import io.vertx.core.json.JsonObject
 import io.bluebank.braid.corda.rest.RestConfig
 import io.vertx.core.http.HttpServerOptions
-import javax.json.JsonObject
 
 const val BRAID_CONFIG_FILENAME = "braid-config.json"
 const val BRAID_DISABLED_PORT = -1
@@ -84,14 +83,10 @@ class CreditBankApiService(serviceHub : AppServiceHub) : SingletonSerializeAsTok
         serviceName = "credit",
         description = "REST API for accessing our awesome credit scoring app",
         hostAndPortUri = "http://localhost:${baseConfig.port}",
-        apiPath = "/") {
+        apiPath = "/credit") {
         group("credit") {
-            unprotected {
-                get("/credit/lasttransaction", creditApi::getLastTransaction)
-            post("/lasttransaction", creditApi::getLastTransaction)
-                // calls issuing flow
-                post("/credit/addtransaction", creditApi::addTransaction)
-            }
+          get("/lasttransaction", creditApi::getLastTransaction)
+          post("/addtransaction", creditApi::addTransaction)
         }
       }
     )

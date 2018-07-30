@@ -13,15 +13,8 @@ interface CreditBankApi {
 
 class CreditbankApiImpl(serviceHub: AppServiceHub) : CreditBankApi {
   override fun getLastTransaction() : CustomerTransaction {
-    return CustomerTransaction(10,"mobile phone top up", true)
-  }
-  // issuing statement
+    return CustomerTransaction(10,"mobile phone top up", true) }
   override fun addTransaction(customerTransaction: CustomerTransaction) {
-      // create state from parameters
-      // call issue flow with object
-
     println("Gonna stick stuff in the ledger $customerTransaction")
   }
-
-
 }
