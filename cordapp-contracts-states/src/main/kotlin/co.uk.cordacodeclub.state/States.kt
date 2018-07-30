@@ -1,3 +1,5 @@
+package co.uk.cordacodeclub.state
+
 import net.corda.core.contracts.CommandAndState
 import net.corda.core.contracts.OwnableState
 import net.corda.core.identity.AbstractParty

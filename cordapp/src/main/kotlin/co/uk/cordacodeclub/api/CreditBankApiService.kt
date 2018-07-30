@@ -9,6 +9,7 @@ import io.vertx.core.json.Json
 import io.vertx.core.json.JsonObject
 import io.bluebank.braid.corda.rest.RestConfig
 import io.vertx.core.http.HttpServerOptions
+import javax.json.JsonObject
 
 const val BRAID_CONFIG_FILENAME = "braid-config.json"
 const val BRAID_DISABLED_PORT = -1
